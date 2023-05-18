@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wheel_front {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 49%;
+    left: 25.5%;
+    z-index: 5;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    animation: wheel_rotate .25s steps(6) infinite;
+}
+
+.r21_front {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 48%;
+    left: 25%;
+}
+
+
+
+.wheel_back {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 49%;
+    right: 27.22%;
+    z-index: 5;
+
+    img {
+
+        width: 100%;
+        height: 100%;
+
+    }
+
+    animation: wheel_rotate .25s steps(6) infinite;
+}
+
+.r21_back {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 48%;
+    right: 26.8%;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    height: 500px;
+    position: relative;
+
+    img {
+        animation-name: none;
+        animation-duration: 2s;
+        transition: 2s ease;
+        object-fit: contain;
+        z-index: 2;
+        position: absolute;
+    }
+
+    margin-bottom: 50px;
+}
+
+.door {
+    width: 177px;
+    height: 108px;
+    background: #000;
+    position: absolute;
+    top: 41%;
+    left: 38%;
+    opacity: 0;
+    z-index: 3;
+}
+
+.door_in {
+    width: 177px;
+    height: 108px;
+    background: #000;
+    position: absolute;
+    top: 28%;
+    left: 32%;
+    opacity: 0;
+    z-index: 3;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {}
+
+.title {
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+        margin-bottom: 50px;
+
+        .item_box {
+            p {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: #707070;
+            }
+
+            h1 {
+                font-weight: 700;
+                font-size: 64px;
+                line-height: 79px;
+            }
+        }
+    }
+
+    .title_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 54px 34px;
+
+        .title_item {}
+
+        .title_item_sw {
+            padding-bottom: 30px;
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #707070;
+        }
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 59px;
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            .up {
+                width: 22px;
+                height: 22px;
+            }
+
+            .down {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+.model {
+    display: none;
+
+    .model_window {
+        width: 600px;
+        height: 100%;
+        background: #000;
+        padding: 21px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: 0.7s ease;
+        opacity: 0;
+        animation-duration: 0.7s;
+        animation-name: animationright;
+        z-index: 9;
+
+
+        .head {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+                background: #000;
+                border: #000;
+                cursor: pointer;
+            }
+        }
+
+        .model_cate {
+            margin-left: 86px;
+
+            h1 {
+                color: #FFFFFF;
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 44px;
+                margin-bottom: 31px;
+                margin-top: 150px;
+            }
+
+            ul {
+                display: flex;
+                gap: 12px;
+                flex-direction: column;
+
+                li {
+                    color: #FFFFFF;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+}
+
+.model_button {
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 5px;
+
+
+    .burger {
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 5px;
+
+        .line {
+            height: 5px;
+            width: 30px;
+            border-radius: 10px;
+            background: #000;
+        }
+    }
+}
+
+/**
+Base HTML
+  <label class="ma-switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+*/
+
+@keyframes animationright {
+    from {
+        right: -600px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+// @keyframes animationleft {
+//     from {right:0px; opacity:0} 
+//     to {right:-600; opacity:1}
+// }
+
+@mixin maSwitch($width: 60px, $color: #03a9f4) {
+    .ma-switch {
+        --width: #{$width};
+        --height: calc(var(--width) / 2);
+        --color: #{$color};
+        position: relative;
+        display: inline-block;
+        width: var(--width);
+        height: var(--height);
+        margin: 0;
+
+        .slider {
+            --slider-size: calc(var(--height) - 2px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: .4s;
+            overflow: hidden;
+            z-index: 0;
+
+            &::before {
+                position: absolute;
+                left: 1px;
+                bottom: 1px;
+                height: var(--slider-size);
+                width: var(--slider-size);
+                background-color: white;
+                transition: .4s;
+                transform-origin: left;
+                box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+                content: '';
+                z-index: 0;
+            }
+
+            &.round {
+                border-radius: 100px;
+
+                &::before {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        input {
+            width: 0;
+            height: 0;
+            opacity: 0;
+
+            &:checked+.slider {
+                background-color: blue;
+            }
+
+            &:focus+.slider {
+                box-shadow: 0 0 1px var(--color);
+            }
+
+            &:checked+.slider:before {
+                transform: translateX(calc(var(--width) / 2));
+            }
+        }
+    }
+}
+
+.container {
+    @include maSwitch;
+
+    .title {
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}
+
+.tesla {
+    animation-name: none;
+    animation-duration: 2s;
+    transition: 2s ease;
+}
+
+@keyframes door {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 10;
+    }
+}
+
+@keyframes close_door {
+    0% {
+        scale: 10;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes wheel_rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+//////////////////
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.change_img {
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 700ms ease;
+    animation-name: none;
+    animation-duration: 2s;
+}
+
+span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #707070;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 79px;
+}
+
+img {
+    width: 100%;
+}
+
+main {
+    display: none;
+}
+
+.promo_sec {
+
+    .present {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 127px;
+        margin-top: 50px;
+    }
+
+    .color_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+        margin-top: 55px;
+
+        .div:nth-child(2) {
+            padding-bottom: 31px;
+        }
+
+        .color_item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 50px;
+
+            .color_elem {
+                background: #262626;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .color_elem:nth-child(2) {
+                background: #EFEFEF;
+            }
+
+            .color_elem:nth-child(3) {
+                background: #E6DDD0;
+            }
+        }
+    }
+}
+
+
+input {
+    appearance: none;
+}
+
+input:checked+.switch .switch-button {
+    left: 1.6rem;
+    background-color: white;
+}
+
+input:checked+.switch {
+    background-color: black;
+    border: 3px solid black;
+}
+
+input:checked+.switch-dark .switch-button-dark {
+    left: 1.6rem;
+    background-color: black;
+}
+
+input:checked+.switch-dark {
+    background-color: white;
+    border: 3px solid white;
+}
+
+.switch {
+    height: 1.3rem;
+    width: 2.8rem;
+    border-radius: 20px;
+    border: 3px solid grey;
+    position: absolute;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.switch-button {
+    background-color: black;
+    position: inherit;
+    top: 0.11rem;
+    left: 0.19rem;
+    border-radius: 10px;
+    height: 80%;
+    width: 35%;
+    transition: all 200ms ease-in-out;
+}
+
+main {
+    animation-name: none;
+    animation-duration: 2s;
+    transition: 2s ease;
+}
